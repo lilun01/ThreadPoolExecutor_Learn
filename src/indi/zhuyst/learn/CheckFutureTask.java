@@ -5,7 +5,7 @@ import indi.zhuyst.learn.thread.BaseCheckThread;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.FutureTask;
 
-public class CheckFutureTask extends FutureTask<Boolean>{
+public class CheckFutureTask extends FutureTask<String>{
 
     private volatile CountDownLatch latch;
 
@@ -20,7 +20,7 @@ public class CheckFutureTask extends FutureTask<Boolean>{
     @Override
     protected void done() {
         try {
-            if(!get()){
+            if(!isDone()){
                 afterFail();
             }
         } catch (Exception e) {
