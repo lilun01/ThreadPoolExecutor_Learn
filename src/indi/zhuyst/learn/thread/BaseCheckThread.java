@@ -2,7 +2,7 @@ package indi.zhuyst.learn.thread;
 
 import java.util.concurrent.Callable;
 
-public abstract class BaseCheckThread implements Callable<Boolean>{
+public abstract class BaseCheckThread implements Callable<String>{
 
     protected final int uid;
 
